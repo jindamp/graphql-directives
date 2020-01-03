@@ -1,0 +1,13 @@
+directive @authDirective on FIELD_DEFINITION
+
+type User {
+	id: Int,
+    username: String @authDirective(role : "admin"),
+    email: String,
+    mobile: String,
+    age: Int
+}
+
+type Query {
+    users:[User]
+}
